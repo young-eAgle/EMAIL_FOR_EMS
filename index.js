@@ -58,7 +58,7 @@ app.post('/send-email', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'asifrazza75@gmail.com',
-            pass: 'nnahfejmglptfeql'  // Make sure to keep this secure
+            pass: 'mnpmhocwnwvqhhbf'  // Make sure to keep this secure
         }
     });
 
