@@ -13,7 +13,7 @@ app.use(cors({
       if (!origin) return callback(null, true);
       
       // Define allowed origins dynamically
-      const allowedOrigins = ['http://95.217.67.77:7003', 'http://bimserver:7003','http://192.168.43.145:8080'];
+      const allowedOrigins = ['http://95.217.67.77:7003', 'http://bimserver:7003','http://192.168.43.145:8080','http://localhost:8080'];
       
       if (allowedOrigins.indexOf(origin) !== -1) {
         callback(null, true);  // Origin is allowed
