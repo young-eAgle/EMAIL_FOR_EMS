@@ -5,29 +5,25 @@ import fetch from 'node-fetch';
 
 const app = express();
 app.use(express.json({ limit: '10mb' }));
-// app.use(cors({ origin: '*' }));   //http://95.217.67.77:7003   http://bimserver:7003 http://bimserver:7003
-
-// app.use(cors({
-//     origin: function (origin, callback) {
-//       // Allow requests with no origin (like mobile apps, curl, etc.)
-//       if (!origin) return callback(null, true);
-      
-//       // Define allowed origins dynamically
-//       const allowedOrigins = ['http://95.217.67.77:7003', 'http://bimserver:7003','http://192.168.43.145:8080','http://localhost:8080'];
-      
-//       if (allowedOrigins.indexOf(origin) !== -1) {
-//         callback(null, true);  // Origin is allowed
-//       } else {
-//         callback(new Error('Not allowed by CORS'));  // Reject other origins
-//       }
-//     }
-//   }));
-  
 
 app.use(cors({
-    origin: '*', // Allow all origins
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps, curl, etc.)
+      if (!origin) return callback(null, true);
+      
+      // Define allowed origins dynamically
+      const allowedOrigins = ['http://95.217.67.77:7003', 'http://bimserver:7003','http://192.168.43.145:8080','http://localhost:8080'];
+      
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);  // Origin is allowed
+      } else {
+        callback(new Error('Not allowed by CORS'));  // Reject other origins
+      }
+    }
   }));
   
+
+
 
 // GET route to test server
 app.get('/', (req, res) => {
