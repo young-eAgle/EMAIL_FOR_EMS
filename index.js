@@ -59,7 +59,7 @@ app.post('/send-email', (req, res) => {
         service: 'gmail',
         auth: {
             user: 'asadqhseinternational@gmail.com',
-            pass: 'paanaceidwrztixf'  // Make sure to keep this secure
+            pass: 'kmfumygautnlydol'  // Make sure to keep this secure
         }
     });
 
